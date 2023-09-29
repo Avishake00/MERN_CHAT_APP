@@ -4,6 +4,7 @@ cors = require("cors");
 const ConnectDB = require("./config/db");
 const UserRoutes = require("./Routes/UserRoutes");
 const {userNotFound,errorHandle} =require('./middleware/errorMiddleware');
+const chatRoutes=require('./Routes/ChatRoutes')
 const app = express();
 dotenv.config();
 // connect to DB using ConnectDB function
@@ -23,6 +24,7 @@ app.use("/api/user", UserRoutes);
 app.use(userNotFound);
 app.use(errorHandle);
 
-// app.use('/api/chats',chatRoutes);
+//this is used for all the works in the chat page
+app.use('/api/chats',chatRoutes);
 
 app.listen({ port }, console.log(`server is running on port ${port}`));
