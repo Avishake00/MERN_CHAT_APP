@@ -6,8 +6,6 @@
 //latestMasseges
 
 const mongoose = require("mongoose");
-const User = require("./UserModel");
-const Message = require("./MessageModel");
 const ChatSchema = mongoose.Schema(
 	{
 		chatName: { type: String, trim: true },

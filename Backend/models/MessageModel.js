@@ -4,8 +4,6 @@
 //of which chat it belongs to
 
 const mongoose = require("mongoose");
-const User = require("./UserModel");
-const Chat = require("./ChatModel");
 const MessageSchema = mongoose.Schema(
 	{
 		sender: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
